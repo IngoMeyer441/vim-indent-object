@@ -36,6 +36,16 @@ onoremap <silent>iI :<C-u>cal <Sid>HandleTextObjectMapping(1, 1, 0, [line("."), 
 vnoremap <silent>aI :<C-u>cal <Sid>HandleTextObjectMapping(0, 1, 1, [line("'<"), line("'>"), col("'<"), col("'>")])<CR><Esc>gv
 vnoremap <silent>iI :<C-u>cal <Sid>HandleTextObjectMapping(1, 1, 1, [line("'<"), line("'>"), col("'<"), col("'>")])<CR><Esc>gv
 
+" Simple extra mappings for a block object (the current/selected line is interpreted as top line)
+" Mappings excluding line below.
+onoremap <silent>ab :<C-u>cal <Sid>HandleTextObjectMapping(0, 0, 0, [line(".")+1, line(".")+1, col("."), col(".")])<CR>
+onoremap <silent>ib :<C-u>cal <Sid>HandleTextObjectMapping(1, 0, 0, [line(".")+1, line(".")+1, col("."), col(".")])<CR>
+
+" Mappings including line below.
+onoremap <silent>aB :<C-u>cal <Sid>HandleTextObjectMapping(0, 1, 0, [line(".")+1, line(".")+1, col("."), col(".")])<CR>
+onoremap <silent>iB :<C-u>cal <Sid>HandleTextObjectMapping(1, 1, 0, [line(".")+1, line(".")+1, col("."), col(".")])<CR>
+
+
 let s:l0 = -1
 let s:l1 = -1
 let s:c0 = -1
