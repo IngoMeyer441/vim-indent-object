@@ -40,10 +40,14 @@ vnoremap <silent>iI :<C-u>cal <Sid>HandleTextObjectMapping(1, 1, 1, [line("'<"),
 " Mappings excluding line below.
 onoremap <silent>ab :<C-u>cal <Sid>HandleTextObjectMapping(0, 0, 0, [line(".")+1, line(".")+1, col("."), col(".")])<CR>
 onoremap <silent>ib :<C-u>cal <Sid>HandleTextObjectMapping(1, 0, 0, [line(".")+1, line(".")+1, col("."), col(".")])<CR>
+vnoremap <silent>ab :<C-u>cal <Sid>HandleTextObjectMapping(0, 0, 1, [line("'<")+1, line("'>")+1, col("'<"), col("'>")])<CR><Esc>gv
+vnoremap <silent>ib :<C-u>cal <Sid>HandleTextObjectMapping(1, 0, 1, [line("'<")+1, line("'>")+1, col("'<"), col("'>")])<CR><Esc>gv
 
 " Mappings including line below.
 onoremap <silent>aB :<C-u>cal <Sid>HandleTextObjectMapping(0, 1, 0, [line(".")+1, line(".")+1, col("."), col(".")])<CR>
 onoremap <silent>iB :<C-u>cal <Sid>HandleTextObjectMapping(1, 1, 0, [line(".")+1, line(".")+1, col("."), col(".")])<CR>
+vnoremap <silent>aB :<C-u>cal <Sid>HandleTextObjectMapping(0, 1, 1, [line("'<")+1, line("'>")+1, col("'<"), col("'>")])<CR><Esc>gv
+vnoremap <silent>iB :<C-u>cal <Sid>HandleTextObjectMapping(1, 1, 1, [line("'<")+1, line("'>")+1, col("'<"), col("'>")])<CR><Esc>gv
 
 
 let s:l0 = -1
